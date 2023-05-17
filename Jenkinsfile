@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Run Python Script') {
             steps {
-                bat 'py hello.py'
+                bat 'py jenkin.py'
             }
         }
     }
