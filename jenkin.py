@@ -18,7 +18,7 @@ os.chdir(repo_name)
 os.system("git push --mirror https://github.com/smartdev0218/" + repo_name)
 os.chdir("..")
 
-config_file_path = os.path.join(repo_name, "API", "Conig.yaml")
+config_file_path = os.path.join(repo_name, "API", "Config.yaml")
 
 file_path = open(config_file_path, "rt")
 
