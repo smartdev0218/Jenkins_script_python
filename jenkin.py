@@ -18,9 +18,9 @@ config_file_path = os.path.join(repo_name, "API", "Conig.yaml")
 # with open(config_file_path, "r") as config_file:
 #   config_data = config_file.read()
 
-file = open(config_file_path, "rt")
+file_path = open(config_file_path, "rt")
 
-config_file = file.read()
+config_file = file_path.read()
 
 config_data = config_data.replace(product_name, "ProductNamePlaceholder")
 config_data = config_data.replace(application_name, "ApplicationNamePlaceholder")
@@ -29,9 +29,9 @@ config_data = config_data.replace(target_url, "TargetUrlPlaceholder")
 # with open(config_file_path, "w") as config_file:
 #   config_file.write(config_data)
 
-file = open('config.yaml', "wt")
-file.write(config_file)
-file.close()
+file_path = open('config.yaml', "wt")
+file_path.write(config_file)
+file_path.close()
 
 key = product_name + "_" + application_name
 encrypted_key = "thisisademooauthkey"
@@ -40,8 +40,13 @@ key_folder_path = os.path.join(repo_name, "key")
 os.makedirs(key_folder_path)
 
 key_file_path = os.path.join(key_folder_path, "encrypted_key")
-with open(key_file_path, "w") as key_file:
-  key_file.write(encrypted_key)
+
+# with open(key_file_path, "w") as key_file:
+# key_file.write(encrypted_key)
+
+key_file = open(key_file_path, "wt")
+key_file.write(encrypted_key)
+key_file.close()
 
 os.chdir(repo_name)
 os.system("git add .")
