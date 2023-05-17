@@ -13,7 +13,7 @@ os.chdir("Jenkins_Python.git")
 os.system("git push --mirror ../" + repo_name)
 os.chdir("..")
 
-config_file_path = os.path.join(repo_name, "API", "Config.YAML")
+config_file_path = os.path.join(repo_name, "API", "Conig.YAML")
 with open(config_file_path, "r") as config_file:
   config_data = config_file.read()
   
