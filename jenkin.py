@@ -22,14 +22,14 @@ file_path = open(config_file_path, "rt")
 
 config_file = file_path.read()
 
-config_data = config_data.replace(product_name, "ProductNamePlaceholder")
-config_data = config_data.replace(application_name, "ApplicationNamePlaceholder")
-config_data = config_data.replace(target_url, "TargetUrlPlaceholder")
+config_file = config_file.replace(product_name, "ProductNamePlaceholder")
+config_file = config_file.replace(application_name, "ApplicationNamePlaceholder")
+config_file = config_file.replace(target_url, "TargetUrlPlaceholder")
 
 # with open(config_file_path, "w") as config_file:
 #   config_file.write(config_data)
 
-file_path = open('config.yaml', "wt")
+file_path = open(config_file_path, "wt")
 file_path.write(config_file)
 file_path.close()
 
