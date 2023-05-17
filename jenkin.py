@@ -7,6 +7,8 @@ target_url = os.environ['TargetURL']
 
 repo_name = product_name
 
+if os.path.exists(product_name):
+  os.remove(product_name)
 os.system("git clone https://github.com/smartdev0218/Jenkins_Python.git " + repo_name)
 os.chdir(repo_name)
 os.system("git push --mirror https://github.com/smartdev0218/" + repo_name)
