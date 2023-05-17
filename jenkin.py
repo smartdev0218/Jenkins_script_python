@@ -6,7 +6,7 @@ jira_db = os.environ['JiraDb']
 target_url = os.environ['TargetURL']
 
 keyArr = ['ProductName', 'ApplicationName', 'TargetURL']
-valuArr = []
+valueArr = []
 valueArr.append(product_name)
 valueArr.append(application_name)
 valueArr.append(target_url)
