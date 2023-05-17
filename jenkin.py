@@ -5,6 +5,12 @@ application_name = os.environ['ApplicationName']
 jira_db = os.environ['JiraDb']
 target_url = os.environ['TargetURL']
 
+keyArr = ['ProductName', 'ApplicationName', 'TargetURL']
+valuArr = []
+valueArr.append(product_name)
+valueArr.append(application_name)
+valueArr.append(target_url)
+
 repo_name = product_name
 
 os.system("git clone https://github.com/smartdev0218/Jenkins_Python.git " + repo_name)
@@ -17,13 +23,16 @@ config_file_path = os.path.join(repo_name, "API", "Conig.yaml")
 file_path = open(config_file_path, "rt")
 
 config_file = file_path.read()
+lines = config_file.split('\n')
 
-config_file = config_file.replace(product_name, "ProductNamePlaceholder")
-config_file = config_file.replace(application_name, "ApplicationNamePlaceholder")
-config_file = config_file.replace(target_url, "TargetUrlPlaceholder")
+for i in range(len(lines)):
+    for j in range(len(keyArr)):
+        if keyArr[j] in lines[i]:
+            lines[i] = keyArr[j] + ": " + valueArr[j]
+            break
 
 file_path = open(config_file_path, "wt")
-file_path.write(config_file)
+file_path.write('\n'.join(lines))
 file_path.close()
 
 key = product_name + "_" + application_name
