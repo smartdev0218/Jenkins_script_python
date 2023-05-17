@@ -14,7 +14,7 @@ os.chdir("Jenkins_Python")
 os.system("git push --mirror https://github.com/smartdev0218/" + repo_name)
 os.chdir("..")
 
-config_file_path = os.path.join(repo_name, "API", "Conig.YAML")
+config_file_path = os.path.join(repo_name, "API", "Conig.yaml")
 # with open(config_file_path, "r") as config_file:
 #   config_data = config_file.read()
 
