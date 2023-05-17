@@ -1,9 +1,13 @@
 import os
 
-product_name = os.environ['ProductName']
-application_name = os.environ['ApplicationName']
-jira_db = os.environ['JiraDb']
-target_url = os.environ['TargetURL']
+# product_name = os.environ['ProductName']
+# application_name = os.environ['ApplicationName']
+# jira_db = os.environ['JiraDb']
+# target_url = os.environ['TargetURL']
+product_name = "New_Jenkins_Python"
+application_name = "ApplicationName"
+jira_db = "JiraDb"
+target_url = "TargetURL"
 
 # repo_name = product_name + ".git"
 repo_name = product_name
@@ -50,5 +54,5 @@ key_file.close()
 
 os.chdir(repo_name)
 os.system("git add .")
-os.system("git commit -m 'Adding updated Config.YAML and encrypted key'")
+os.system("git commit -m 'change'")
 os.system("git push --mirror https://github.com/smartdev0218/" + repo_name)
