@@ -27,7 +27,7 @@ file_path.write(config_file)
 file_path.close()
 
 key = product_name + "_" + application_name
-encrypted_key = key + "thisisademooauthkey"
+encrypted_key = key "_" + "thisisademooauthkey"
 
 key_folder_path = os.path.join(repo_name, "key")
 os.makedirs(key_folder_path)
